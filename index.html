@@ -1,0 +1,468 @@
+<!-- Shayma Mariey- 60106301
+ INFS2101- 1 & 5
+ Fall 2024 Project
+ Mrs Claudia-->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title> 
+ </head>
+
+ <style>
+ body {
+  background-color: rgb(209, 228, 233);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Navbar Styling */
+nav {
+  width:100%;
+  margin: 0 ;
+  padding: 0;
+}
+
+.navbar ul{
+  width: 100%;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px ;
+  margin: 0 auto;
+  display: flex ;
+  justify-content: space-evenly;    
+  overflow: hidden;
+
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  font-family: sans-serif;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+  
+
+  /* Hover Effects for Navbar Links */
+.navbar a:hover {
+  color: rgb(169, 195, 225);
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-color: rgb(169, 195, 225)  ; 
+    transition: width 0.3s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    border-color: rgb(169, 195, 225)  ; 
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(169, 195, 225)  50%);
+    background-size: 220%;
+    transition: background-position 0.4s;
+  }
+  
+  .navbar a:hover {
+    background-position: 100%; /* Creates a smooth color fade effect */
+    color: white; /* Changes text color */
+  }
+
+  .socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* Section 1: About Us */
+#section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+#aside1 {
+
+  background-color: #92b6d4;
+  width:740px;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  margin-right: 40px;
+  margin-bottom: 100px;
+  
+}
+
+#aside1 h2 {
+  margin-bottom: 20px;
+}
+
+#aside1 p {
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+/* Section 2: Image */
+#section2 {
+  display: flex;
+  justify-content: left;
+  padding: 20px;
+}
+
+
+#us2 img {
+  max-width:80%;
+  margin:0 ;  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  float:center;
+}
+
+#us3 img{
+  
+  width: 1200%;
+  height:450px;
+  filter: drop-shadow(5px 5px 10px solid black);
+  margin: 100px; ;  
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+/* Bestsellers Section */
+.bestsellers {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Fixed six columns */
+  gap: 20px;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.product {
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  max-width: 150px; /* Reduce size to fit six items in a row */
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h3 {
+  font-size: 1.2em;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.product h5 {
+  font-size: 1em;
+  color: black;
+}
+
+#section3 {
+  font-size: 1.1em;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 1200px;
+}
+
+#section4 {
+  
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+ h3 {
+  text-align: center;
+  font-size: 2.8em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.metrics {
+display: flex;
+margin: 0 auto 10px;
+height: auto;
+padding:15px;
+}
+
+.metrics img {
+  width: 290px;
+  height:550px;
+  filter: drop-shadow(5px 5px 10px solid black);
+  margin: 20px;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+ 
+
+}
+
+.review {
+  margin:15px 0; 
+  background-color: #86aeca;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.socials a {
+  display: flex;
+  padding: 6px ;
+  background-color: #b2a09767;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+footer {
+  width: 100%;
+  background-color: #b2a09767;
+  padding: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer img {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 6px;
+}
+alpha{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+ </style>
+
+
+ <body>
+  
+
+    <nav class="navbar">
+        <ul> 
+          <img src="../images/logo.png" alt="VibeFit" style="width: 70px; height:50px; ">
+
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="Products.html"> Products</a></li>
+        <li> <a href="Contact Us.html"> Contact Us </a> </li>
+        <li> <a href="Subscribe.html"> Subscribe</a> </li>
+        <li> <a href="FAQ.html"> FAQs</a> </li>
+
+        </ul>
+    </nav>
+
+    <header style="margin: 0; padding: 0px; margin-bottom: 150px; ">
+          <img src="../images/sdaaa.png" alt="VibeFit" style="overflow: hidden; width: 1480px  ;  height:auto; display: block; ">
+    </header>
+  
+  
+    
+    <alpha>
+    <section id="section1">
+        <aside id="aside1">
+    <h2>Who We Are</h2>
+    <p> Unlock Peak Performance with VibeFit! 
+        VibeFit is redefining fitness with the VibeBand—a sleek, wearable device that tracks key metrics like heart rate, sleep quality, and VO₂ max, delivering real-time insights for maximum results. 
+        Our AI-powered coaching adapts to you, offering personalized training plans for runners, gym-goers, and athletes. Join our community for inspiring challenges and leaderboards, optimize your recovery, and fuel your journey with top gear and supplements. 
+        Sync up with VibeFit and elevate your fitness today!</p>
+    </aside>
+    </section>
+
+    <section id="section2"> 
+        <aside> 
+            <div id="us2">
+                <img src="../images/matrics.jpeg" alt="us1">
+               
+            </div>
+        </aside>
+    </section>
+  </alpha>
+
+
+
+    <h1 style="color:rgb(40, 63, 84);  font-size: 2em;"> Ready for next-level fitness? Explore VibeFit’s essentials! </h1>
+
+    <section class="bestsellers">
+    
+    <div class="product">
+        <img src="../images/running-home.png" alt="pic1">
+        <h3> VibeFit shoes </h3>
+        <h5>220QR</h5>
+    </div>
+
+    <div class="product">
+        <img src="../images/hijab2.jpg.webp" alt="pic2">
+        <h3> VibeFit Hijab  </h3>
+        <h5>100QR</h5>
+    </div>
+
+    <div class="product">
+        <img src="../images/712bukxlV9L._AC_UY350_.jpg" alt="pic3">
+        <h3> VibeFit Watch </h3>
+        <h5>120QR</h5>
+    </div>
+
+    <div class="product">
+        <img src="../images/AIR+MAX+270.png.jpeg" alt="pic4">
+        <h3> Air Max VibeFit Shoes </h3>
+        <h5>150QR</h5>
+    </div>
+
+    <div class="product">
+        <img src="../images/Screen-Shot-2021-11-08-at-10.57.12-AM.png.webp" alt="pic5">
+        <h3> VibeFit Training Leggings </h3>
+        <h5>130QR</h5>
+    </div>
+
+
+    <div class="product">
+        <img src="../images/WHOOP-4.0_SuperKnit_Tundra_Wrist_1@2x.jpg.webp" alt="pic6">
+        <h3> VibeFit Gear Watch</h3>
+        <h5>100QR</h5>
+    </div>
+    </section>
+
+
+    <section id="section3"> 
+        <h2 style="color:rgb(40, 63, 84);  font-size: 1.5em;" >REVIEWS</h2>
+
+        <div class="review">
+            <blockquote>
+                "I’ve tried a lot of fitness products, but VibeFit’s combination of wearable tech and tailored fitness programs is on another level. The personalized insights have made a huge difference in my performance. Plus, 
+                the customer service team is top-notch!" - Emma Roberts
+            </blockquote>
+        </div>
+
+
+        <div class="review">
+            <blockquote>
+                "VibeFit's gear is a game-changer. 
+                It’s improved both my training and recovery with top-quality products." - Daniel King
+            </blockquote>
+        </div>
+
+        <div class="review">
+            <blockquote>
+                "VibeFit’s customer service is amazing! Quick, helpful, 
+                and went above and beyond to resolve my issue. Truly impressed!"- James Cooper 
+            </blockquote>
+        </div>
+    </section>
+
+<h3 style="color:rgb(40, 63, 84);  ">Share your metrics. Build community.</h3>
+  <section id="section4"> 
+    <div class="metrics">
+    <img src="../images/ronaldo.jpg" alt="img1">
+    <img src="../images/sleep.webp" alt="img2">
+    <img src="../images/stress-monitor-new.png" alt="img3">
+    </div>
+   
+</section>
+
+
+  <footer>
+        <div class="socails"> 
+            <a href="https://www.facebook.com/yourcompany" target="_blank"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+            <a href="https://twitter.com/yourcompany" target="_blank"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/yourcompany" target="_blank"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+        </div>
+
+        <div>
+            <p>Copyright &copy;2024; Designed By Shayma</p>
+        </div>
+
+  </footer>
+       
+ </body>
+ </html>

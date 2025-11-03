@@ -1,0 +1,279 @@
+<!-- Shayma Mariey- 60106301
+ INFS2101- 1 & 5
+ Fall 2024 Project
+ Mrs Claudia-->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title> 
+ </head>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(209, 228, 233);
+        }
+
+        nav {
+  width:100%;
+  margin: 0 ;
+  padding: 0;
+}
+
+.navbar ul{
+  width: 100%;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px ;
+  margin: 0 auto;
+  display: flex ;
+  justify-content: space-evenly;    
+  overflow: hidden;
+
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  font-family: sans-serif;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+  
+
+  /* Hover Effects for Navbar Links */
+.navbar a:hover {
+  color: rgb(169, 195, 225);
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-color: rgb(169, 195, 225)  ; 
+    transition: width 0.3s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    border-color: rgb(169, 195, 225)  ; 
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(169, 195, 225)  50%);
+    background-size: 220%;
+    transition: background-position 0.4s;
+  }
+  
+  .navbar a:hover {
+    background-position: 100%; /* Creates a smooth color fade effect */
+    color: white; /* Changes text color */
+  }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(34, 54, 72);
+        }
+
+        .faq {
+            margin-bottom: 20px;
+        }
+
+        .faq h2 {
+            font-size: 18px;
+            color: rgb(34, 54, 72);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgb(245, 245, 245);
+            margin: 0;
+            transition: all 0.3s;
+        }
+
+        .faq h2:hover {
+            background-color: rgb(34, 54, 72);
+            color: white;
+        }
+
+        .faq p {
+            display: none;
+            padding: 15px;
+            background-color: rgb(250, 250, 250);
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .faq.active p {
+            display: block;
+        }
+
+        .socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.socials a {
+  display: flex;
+  padding: 6px ;
+  background-color: #b2a09767;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+footer {
+  width: 100%;
+  background-color: #b2a09767;
+  padding: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer img {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 6px;
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul> 
+          <img src="../images/logo.png" alt="VibeFit" style="width: 70px; height:50px; ">
+
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="Products.html"> Products</a></li>
+        <li> <a href="Contact Us.html"> Contact Us </a> </li>
+        <li> <a href="Subscribe.html"> Subscribe</a> </li>
+        <li> <a href="FAQ.html"> FAQs</a> </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>VibeFit FAQs: All Your Questions Answered</h1>
+
+        <div class="faq">
+            <h2>What is VibeFit and what do we offer? <span>+</span></h2>
+            <p>VibeFit is a fitness technology brand that combines wearable tech with personalized training programs. We offer devices to track health metrics, optimize workouts, and help users achieve their fitness goals with ease.</p>
+        </div>
+
+        <div class="faq">
+            <h2>Are VibeFit devices waterproof? <span>+</span></h2>
+            <p>Yes! Most of our devices, including the VibeFit Health Tracker and VibeFit Air Trainers, are water-resistant and designed to handle sweat, rain, and swimming.</p>
+        </div>
+
+        <div class="faq">
+            <h2>How can I sync my VibeFit device with the app? <span>+</span></h2>
+            <p>Simply download the VibeFit companion app from the App Store or Google Play. Turn on Bluetooth, pair your device, and follow the on-screen instructions to sync your data.</p>
+        </div>
+
+        <div class="faq">
+            <h2>What metrics do VibeFit devices track? <span>+</span></h2>
+            <p>Our devices track heart rate, sleep patterns, calories burned, steps, distance, and recovery time. Advanced models also include VO₂ max and stress monitoring.</p>
+        </div>
+
+        <div class="faq">
+            <h2>What is the warranty period for VibeFit products? <span>+</span></h2>
+            <p>We offer a 1-year limited warranty on all VibeFit products, covering manufacturing defects. For more details, please review our warranty policy.</p>
+        </div>
+
+        <div class="faq">
+            <h2>Can I use VibeFit devices without the app? <span>+</span></h2>
+            <p>Yes, VibeFit devices can work independently to track basic metrics. However, syncing with the app provides detailed insights and personalized recommendations.</p>
+        </div>
+
+        <div class="faq">
+            <h2>How do I contact VibeFit support? <span>+</span></h2>
+            <p>You can reach us at support@vibefit.com or call our helpline at +974 55988766. Our customer support team is available Saturday to Thursday, 8am to 11pm.</p>
+        </div>
+    </div>
+
+   
+  <footer>
+    <div class="socails"> 
+        <a href="https://www.facebook.com/yourcompany" target="_blank"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+        <a href="https://twitter.com/yourcompany" target="_blank"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/yourcompany" target="_blank"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+    </div>
+
+    <div>
+        <p>Copyright &copy;2024; Designed By Shayma</p>
+    </div>
+
+</footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq h2').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

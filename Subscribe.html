@@ -1,0 +1,542 @@
+<!-- Shayma Mariey- 60106301
+ INFS2101- 1 & 5
+ Fall 2024 Project
+ Mrs Claudia-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe</title>
+    <link href="../css/styles.css" rel="stylesheet">
+    <style>
+        /* General Body and Font Styling */
+        body {
+            background-color: rgb(209, 228, 233);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+       /* Navbar Styling */
+nav {
+  width:100%;
+  margin: 0 ;
+  padding: 0;
+}
+.navbar ul{
+  width: 100%;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px ;
+  margin: 0 auto;
+  display: flex ;
+  justify-content: space-evenly;    
+  overflow: hidden;
+
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  font-family: sans-serif;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+  
+
+  /* Hover Effects for Navbar Links */
+.navbar a:hover {
+  color: rgb(169, 195, 225);
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-color: rgb(169, 195, 225)  ; 
+    transition: width 0.3s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    border-color: rgb(169, 195, 225)  ; 
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(169, 195, 225)  50%);
+    background-size: 220%;
+    transition: background-position 0.4s;
+  }
+  
+  .navbar a:hover {
+    background-position: 100%; /* Creates a smooth color fade effect */
+    color: white; /* Changes text color */
+  }
+
+        /* Content Section Styling */
+        .content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(34, 54, 72);
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .vibefit {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        .join {
+          width: 10px;
+          height: auto;
+            background-color: rgb(34, 54, 72);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .join img {
+         
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .product-info {
+            margin-top: 15px;
+        }
+
+        /* Form Styling */
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 24px;
+            color: rgb(34, 54, 72);
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"],
+        button[type="reset"] {
+            padding: 12px 20px;
+            background-color: #333d44;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            background-color: #6d93ab;
+        }
+
+        /* Footer Styling */
+        footer {
+            width: 100%;
+            background-color: #b2a09767;
+            padding: 15px;
+            text-align: center;
+            font-family: 'Cambria', serif;
+        }
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .socials img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+  footer {
+  margin-top:90px;
+  width: 100%;
+  background-color: #b2a09767;
+  padding: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer img {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 6px;
+}
+
+
+.error-border {
+border: 2px solid red;
+}
+
+.error {
+color: red;
+font-size: 12px;
+margin-top: 5px;
+}
+
+</style>
+
+<script>
+    function validateForm() {
+        // Clear all previous error messages and styles
+        var inputs = document.querySelectorAll("input, select");
+        inputs.forEach(function (input) {
+            input.classList.remove("error-border");
+        });
+
+        var errorFields = document.getElementsByClassName("error");
+        Array.from(errorFields).forEach(function (element) {
+            element.innerText = ""; // Clear previous error text
+        });
+
+        var fullName = document.getElementById("fullName").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var email = document.getElementById("email").value;
+        var confirmEmail = document.getElementById("confirmEmail").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var buildingNumber = document.getElementById("buildingNumber").value;
+        var age = document.getElementById("age").value;
+        var dob = document.getElementById("dob").value;
+        var streetName = document.getElementById("streetName").value;
+
+        var hasError = false;
+
+        // Full Name Validation
+        if (fullName.trim() === "") {
+            showError("fullName", "Full Name is required.");
+            hasError = true;
+        }
+
+        // Username Validation
+        if (username.trim() === "") {
+            showError("username", "Username is required.");
+            hasError = true;
+        }
+
+        // Password Validation
+        if (password.trim() === "") {
+            showError("password", "Password is required.");
+            hasError = true;
+        } else if (password !== confirmPassword) {
+            showError("confirmPassword", "Passwords do not match.");
+            hasError = true;
+        }
+
+        // Email Validation
+        if (email.trim() === "") {
+            showError("email", "Email is required.");
+            hasError = true;
+        } else if (email !== confirmEmail) {
+            showError("confirmEmail", "Emails do not match.");
+            hasError = true;
+        }
+
+
+
+        if ( phoneNumber.trim() === "" || isNaN(phoneNumber)) {
+            showError("phoneNumber", "Phone Number is required");
+            hasError = true;
+        }
+
+        // Phone Number Validation
+        if ( phoneNumber.trim().length !== 12) {
+            showError("phoneNumber", "Phone Number must contain 12 characters.");
+            hasError = true;
+        }
+
+    
+
+        // /Validate that the dob is not missing.
+        if (!dob) {
+            showError("dob", "Date of Birth is required.");
+            hasError = true;
+        }
+
+        // Validate age between 18  and 100.
+        if ( age < 18 || age > 100) {
+            showError("age", "Age must be a number between 18 and 100.");
+            hasError = true;
+        }
+
+
+        //Validate that the age is not missing.
+        if ( age.trim() === "" || isNaN(age)) {
+            showError("age", "Age is required.");
+            hasError = true;
+        }
+
+    
+        // Building Number Validation
+        if (buildingNumber.trim() === "" || isNaN(buildingNumber) || buildingNumber < 1 || buildingNumber > 666) {
+            showError("buildingNumber", "Building Number must be between 1 and 666.");
+            hasError = true;
+        }
+
+
+        if (streetName.trim() === "")  {
+            showError("streetName", "Street  Name is required");
+            hasError = true;
+        }
+
+        return !hasError;
+    }
+
+    function showError(fieldId, message) {
+        var field = document.getElementById(fieldId);
+        var errorElement = document.getElementById(fieldId + "Error");
+        field.classList.add("error-border");
+        errorElement.innerText = message;
+    }
+</script>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        <ul> 
+          <img src="../images/logo.png" alt="VibeFit" style="width: 70px; height:50px; ">
+
+        <li> <a href="index.html">Home</a> </li>
+        <li> <a href="Products.html"> Products</a></li>
+        <li> <a href="Contact Us.html"> Contact Us </a> </li>
+        <li> <a href="Subscribe.html"> Subscribe</a> </li>
+        <li> <a href="FAQ.html"> FAQs </a> </li>
+
+        </ul>
+    </nav>
+
+
+    <body>
+      <h1>Subscribe</h1>
+    
+      <h1>What You'll Experience as a Member</h1>
+
+        <div class="vibefit">
+            <div class="join">
+                <img src="../images/1-world-class-tech-alt2__1_.webp" alt="world-class-tech">
+                <div class="product-info">
+                  <h2>World Class Wearable</h2>
+                    Stay on top of your fitness and health with the Wearable Health Activity Tracker. This advanced device tracks your heart rate, sleep, steps, and calories, providing real-time insights.
+                </div>
+            </div>
+
+            <div class="join">
+                <img src="../images/Update_membership_module__1__3.png.webp" alt="world-class-tech">
+                <div class="product-info">
+                  <h2>Personalized app</h2>
+                    The tracker integrates seamlessly with the companion app, helping you analyze and set fitness goals for a healthier lifestyle.
+                </div>
+            </div>
+
+            <div class="join">
+                <img src="../images/3-research-alt__1___1_.webp" alt="research">
+                <div class="product-info">
+                  <h2>Cutting-edge science </h2>
+                    With access to health data and advanced tracking features, you'll have all the insights you need to optimize your health.
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Form -->
+        <form onsubmit="return validateForm()" action="https://sit.udst.edu.qa/processform.php" method="POST">
+          <fieldset>
+              <legend>Personal Information</legend>
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName">
+              <span class="error" id="fullNameError"></span>
+              <br><br>
+  
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username">
+              <span class="error" id="usernameError"></span>
+              <br><br>
+  
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password">
+              <span class="error" id="passwordError"></span>
+              <br><br>
+  
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword">
+              <span class="error" id="confirmPasswordError"></span>
+              <br><br>
+  
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email">
+              <span class="error" id="emailError"></span>
+              <br><br>
+  
+              <label for="confirmEmail">Confirm Email</label>
+              <input type="email" id="confirmEmail" name="confirmEmail">
+              <span class="error" id="confirmEmailError"></span>
+              <br><br>
+  
+              <label for="phoneNumber">Phone Number</label>
+              <input type="tel" id="phoneNumber" name="phoneNumber" value="+974">
+              <span class="error" id="phoneNumberError"></span>
+              <br><br>
+  
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob">
+              <span class="error" id="dobError"></span>
+              <br><br>
+  
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age">
+              <span class="error" id="ageError"></span>
+              <br><br>
+          </fieldset>
+  
+          <fieldset>
+              <legend>Shipping Address</legend>
+              <label for="buildingNumber">Building Number</label>
+              <input type="text" id="buildingNumber" name="buildingNumber">
+              <span class="error" id="buildingNumberError"></span>
+              <br><br>
+  
+              <label for="streetName">Street Name</label>
+              <input type="text" id="streetName" name="streetName">
+              <span class="error" id="streetNameError"></span>
+              <br><br>
+  
+              <label for="city">City</label>
+              <select id="city" name="city">
+                  <option value="Doha" selected>Doha</option>
+                  <option value="Al Wakrah">Al Wakrah</option>
+                  <option value="Lusail">Dukhan</option>
+                  <option value="Lusail">Mesaieed</option>
+                  <option value="Al Khor">Al Khor</option>
+                  <option value="The Pearl">The Pearl</option>
+                  <option value="Al Sadd">Al Sadd</option>
+                  <option value="Al Rayyan">Al Rayyan</option>
+                  <option value="Lusail">Lusail</option>
+              </select>
+              <span class="error" id="cityError"></span>
+              <br>
+  
+            
+              <input type="checkbox" id="newsletter" name="newsletter" value="subscribe">
+              <label for="newsletter">Subscribe to Newsletter</label>
+          </fieldset>
+  
+          <button type="submit" id="submit">Submit</button>
+          <button type="reset" id="reset">Reset</button>
+      </form>
+  
+  </body>
+
+</html>
+
+
+
+<footer>
+  <div class="socails"> 
+      <a href="https://www.facebook.com/yourcompany" target="_blank"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+      <a href="https://twitter.com/yourcompany" target="_blank"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+      <a href="https://www.instagram.com/yourcompany" target="_blank"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+  </div>
+
+  <div>
+      <p>Copyright &copy;2024; Designed By Shayma</p>
+  </div>
+
+</footer>
+ 
+</body>
+</html>

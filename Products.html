@@ -1,0 +1,689 @@
+<!-- Shayma Mariey- 60106301
+ INFS2101- 1 & 5
+ Fall 2024 Project
+ Mrs Claudia-->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeFit Products</title>
+   
+    <style>
+        /* General Styles */
+        body {
+            background-color: rgb(209, 228, 233);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+/* Navbar Styling */
+nav {
+  width:100%;
+  margin: 0 ;
+  padding: 0;
+}
+.navbar ul{
+  width: 100%;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px ;
+  margin: 0 auto;
+  display: flex ;
+  justify-content: space-evenly;    
+  overflow: hidden;
+
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  font-family: sans-serif;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+  
+
+  /* Hover Effects for Navbar Links */
+.navbar a:hover {
+  color: rgb(169, 195, 225);
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    border-color: rgb(169, 195, 225)  ; 
+    transition: width 0.3s;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .navbar a:hover {
+    border-color: rgb(169, 195, 225)  ; 
+  }
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(169, 195, 225)  50%);
+    background-size: 220%;
+    transition: background-position 0.4s;
+  }
+  
+  .navbar a:hover {
+    background-position: 100%; /* Creates a smooth color fade effect */
+    color: white; /* Changes text color */
+  }
+
+ /* Product Styles */
+.products-container {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 20px;
+padding: 20px;
+max-width: 1200px;
+}
+.product {
+background: white;
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 15px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+text-align: center;
+            
+}
+.product:hover {
+ transform: scale(1.03);
+}
+
+.product img {
+display: block;
+margin: 0 auto 10px;
+width: 100%;
+height: auto;
+        }
+
+.product-name {
+font-size: 18px;
+color: black;
+margin: 10px 0;
+}
+.product-price {
+font-weight: bold;
+color: black;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+}
+
+.product-info {
+display: none;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
+padding: 10px;
+border-radius: 0 0 8px 8px;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1;
+}
+
+.product:hover .product-info {
+display: block;
+}
+
+.product-description {
+text-align: justify;
+line-height: 1.5;
+}
+
+.product-rating {
+color: gold;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.socials a {
+  display: flex;
+  padding: 6px ;
+  background-color: #b2a09767;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+h2{
+  font-size: 2.5em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+footer {
+  margin-top:90px;
+  width: 100%;
+  background-color: #b2a09767;
+  padding: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+footer img {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 6px;
+}
+alpha{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+    </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <ul> 
+      <img src="../images/logo.png" alt="VibeFit" style="width: 70px; height:50px; ">
+
+    <li> <a href="index.html">Home</a> </li>
+    <li> <a href="Products.html"> Products</a></li>
+    <li> <a href="Contact Us.html"> Contact Us </a> </li>
+    <li> <a href="Subscribe.html"> Subscribe</a> </li>
+    <li> <a href="FAQ.html"> FAQs </a> </li>
+
+    </ul>
+</nav>
+
+  
+    <header>
+        <h2 style="color:rgb(40, 63, 84); margin-bottom: 15px;  font-size: 2em;">What's New At VibeFit</h2>
+    </header>
+
+    <section class="products-container">
+      <div class="product">
+        <div class="product-image">
+        <img src="../images/Wearable-Health-Activity-Tracker.jpg" alt="Product Thumbnail">
+        <div class="product-name"> VibeFit Watch</div>
+      <div class="product-price">150QR</div>
+      </div>
+    
+      <div class="product-info">
+    
+        <div class="product-description">Stay on top of your fitness and health with the Wearable Health Activity Tracker. 
+          This advanced device tracks your heart rate, sleep, steps, and calories, providing real-time insights. 
+          Easily view and analyze all your metrics through the companion app, helping you make informed decisions and achieve your wellness goals.</div>
+    
+        <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+    
+      </div>
+    </div>
+    
+   
+    <div class="product">
+    <div class="product-image">
+    <img src="../images/WhoopWaterproof.webp" alt="Product Thumbnail">
+    <div class="product-name"> VibeFit Watch</div>
+  <div class="product-price">250QR</div>
+  </div>
+
+  <div class="product-info">
+
+    <div class="product-description">Take your fitness to the next level with the VibeFit Waterproof with Battery. 
+      Designed for durability and performance, this tracker is waterproof for all-weather workouts and comes with a long-lasting battery to keep you powered through every step of your journey. 
+      Perfect for swimmers, runners, and adventurers!</div>
+
+    <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+  </div>
+</div>
+
+  
+<div class="product">
+    <div class="product-image">
+      <img src="../images/wristband-black.webp" alt="Product Thumbnail">
+  <div class="product-name"> VibeFit Wrist Band Black</div>
+  <div class="product-price">130QR</div>
+  </div>
+
+  <div class="product-info">
+
+    <div class="product-description"> Stylish and functional, the VibeFit Wrist Band in Grey features convenient charging and a long-lasting battery. 
+      Perfect for tracking your activity and performance, it’s designed to keep you connected and on the move without missing a beat.</div>
+
+    <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+  </div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/VibeFit band.jpg" alt="Product Thumbnail">
+    <div class="product-name"> VibeFit Band </div>
+<div class="product-price">220QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Track your strength with the VibeFit Bicep Band, designed to measure bicep activity and performance. 
+    Perfect for strength training and muscle monitoring, this band provides real-time feedback to help you optimize your workouts and achieve peak results.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐⭐</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Accessory SuperKnit Band.jpg" alt="Product Thumbnail">
+  <div class="product-name"> VibeFit Watch Baby Blue Air</div>
+<div class="product-price">290QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">The VibeFit Watch in baby blue Air combines style and functionality with a lightweight design and vibrant color. 
+    Track your fitness metrics, monitor your health, and stay connected all day long with this sleek, comfortable watch, perfect for any active lifestyle.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Water proof watch.jpeg" alt="Product Thumbnail">
+    <div class="product-name"> Water Proof VibeFit Watch</div>
+<div class="product-price">300QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">
+    The Waterproof VibeFit Watch is built to withstand any adventure, offering full water resistance for swimmers, runners, and outdoor enthusiasts. 
+    Track your fitness, monitor health metrics, and stay connected, no matter the conditions, with this durable and reliable smartwatch.</div>
+
+  <div class="product-rating">Rating:⭐⭐☆☆☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Arm-Sleeve-Full-Length.webp" alt="Product Thumbnail">
+    <div class="product-name"> Arm Full Length Sleeve</div>
+<div class="product-price">100QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">
+
+Gear up with the Arm Full Length Sleeve for Men with Tracker, 
+designed for performance and precision. Featuring an integrated fitness tracker, 
+this sleeve monitors heart rate, muscle activity, and movement, making it ideal for athletes and fitness enthusiasts aiming to optimize their training. 
+Built for comfort and durability, it's perfect for every workout.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Arm-Sleeve-Full-Length-2.png.webp" alt="Product Thumbnail">
+    <div class="product-name"> Arm Full Length Sleeve For Women</div>
+<div class="product-price">70QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description"> 
+
+    Stay empowered during every workout with the Arm Full Length Sleeve for Women with Tracker. 
+    Designed for women who value both performance and style, this sleeve features an embedded tracker to monitor heart rate, muscle activity, and movement. 
+    Perfect for fitness enthusiasts looking to optimize their training with comfort and precision.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Training-Tank.webp" alt="Product Thumbnail">
+    <div class="product-name"> Training Tank</div>
+<div class="product-price">100QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">
+   Stay stylish and connected with the Training Tank for Women with Tracker. This high-performance tank features an embedded tracker to monitor heart rate, movement, 
+    and calories burned, making it perfect for workouts or active days. 
+    Designed for comfort and breathability, it empowers you to achieve your fitness goals with ease.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Womens-Running-Shorts-Black.webp" alt="Product Thumbnail">
+    <div class="product-name"> Black Running Short</div>
+<div class="product-price">99QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">
+
+    Stay comfortable and focused with the Black Running Shorts, designed for ultimate performance and style. 
+    These lightweight, breathable shorts offer a secure fit and freedom of movement, making them perfect for runs, workouts, or everyday activity.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Running Sports-Bra-Black.webp" alt="Product Thumbnail">
+    <div class="product-name"> Running Sports Bra </div>
+<div class="product-price">70QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">
+
+Push your limits with the Running Sports Bra in Black with Tracker. Combining sleek design and advanced technology, 
+it features an integrated tracker to monitor heart rate, movement, and calories burned. Offering ultimate support and comfort, 
+it's perfect for active women striving to optimize their performance.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐⭐</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Wear-Short-Puck-Storm-Blue.webp" alt="Product Thumbnail">
+    <div class="product-name"> Blue Performance Short  </div>
+<div class="product-price">120QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Maximize your performance with the Performance Shorts in Blue with Tracker. 
+    These lightweight, breathable shorts are equipped with an integrated tracker to monitor your heart rate, steps, and calories burned. 
+    Perfect for active men, they provide comfort, flexibility, 
+    and real-time data to help you push your limits during any workout or run.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/Circle LegginsBlack.webp" alt="Product Thumbnail">
+    <div class="product-name"> Circle Black Leggings</div>
+<div class="product-price">120QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Achieve your best performance with the Circle Black Leggings with Tracker. 
+    Designed for comfort and style, these leggings feature an integrated tracker to monitor your heart rate, steps, and calories burned. 
+    Perfect for workouts, runs, or daily activities, they combine fashion with fitness, 
+    helping you stay connected to your progress every step of the way.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/PerformanceShorts-Black.webp" alt="Product Thumbnail">
+    <div class="product-name">Black Performance Short </div>
+<div class="product-price">120QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Elevate your workout with the Performance Shorts in Black with Tracker. 
+    These sleek, lightweight shorts feature an integrated tracker to monitor heart rate, calories burned, and movement, 
+    providing real-time insights to optimize your training. 
+    Perfect for active men, they combine comfort, flexibility, and advanced fitness tracking for peak performance.</div>
+
+  <div class="product-rating">Rating:⭐⭐☆☆☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/compressionpod.webp" alt="Product Thumbnail">
+    <div class="product-name"> Compression Shirt</div>
+<div class="product-price">180QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Take your training to the next level with the Compression Shirt in Black with Tracker. 
+    Designed for muscle support and recovery, this shirt includes a built-in tracker to monitor your heart rate, movement, 
+    and performance. Its compression fit enhances circulation, while the tracker provides real-time feedback to optimize your workouts and progress.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/menshoes.jpg" alt="Product Thumbnail">
+    <div class="product-name">VibeFit Running Trainers</div>
+<div class="product-price">210QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Run farther and faster with the Men’s Grey Shoes with Extra Cushion. 
+    Designed for maximum comfort and support,these shoes feature advanced cushioning to reduce impact and enhance your stride. 
+    Ideal for runners, they provide the stability and durability needed for better performance on every run.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/nike-White-Journey-Run-Trainers.jpeg" alt="Product Thumbnail">
+    <div class="product-name">VibeFit Journey Running Trainers</div>
+<div class="product-price">250QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Step into your best run with the VibeFit Journey Running Trainers. 
+    Engineered for comfort and performance, these trainers offer superior support, cushioning, and breathability to keep you going mile after mile. 
+    With a sleek, modern design and enhanced traction,
+    they’re perfect for runners looking to elevate their performance and experience a smooth, 
+    comfortable run.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/nike-White-Air-Max-270-Trainers.webp" alt="Product Thumbnail">
+    <div class="product-name">VibeFit Air Max 270 Trainers</div>
+<div class="product-price">240QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Experience unbeatable comfort and style with the VibeFit Air Max 270 Trainers. 
+    Featuring advanced air cushioning technology for superior impact protection, these trainers provide all-day comfort and support. 
+    Perfect for both performance and everyday wear, their sleek design and responsive feel make them ideal for active individuals looking to elevate their workout or casual look.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐⭐</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/nike-MBLUE-Air.webp" alt="Product Thumbnail">
+    <div class="product-name"> VibeFit Blue Air Trainer</div>
+<div class="product-price">300QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Step up your performance with the VibeFit Blue Air Trainer. 
+    Designed for comfort and agility, this trainer features breathable fabric and a responsive sole for maximum support during any workout. 
+    Its vibrant blue color and sleek design ensure you stand out while enjoying optimal cushioning and flexibility for every step. 
+    Perfect for athletes and fitness enthusiasts alike.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/nike-Blue-Reactx-Pegasus-TrailSneakers.webp" alt="Product Thumbnail">
+    <div class="product-name"> VibeFit Blue React Trainer</div>
+<div class="product-price">280QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Unleash your potential with the VibeFit Blue React Trainer. 
+    Built for speed and comfort, these trainers feature responsive React foam technology that delivers a smooth, cushioned ride with every step. 
+    The breathable upper and durable sole provide excellent support, making them perfect for high-intensity workouts, running, or casual wear. 
+    Step into performance with style in these sleek, blue trainers.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐⭐☆</div>
+
+</div>
+</div>
+
+
+
+<div class="product">
+  <div class="product-image">
+    <img src="../images/nike-white.webp" alt="Product Thumbnail">
+    <div class="product-name"> VibeFit White Air Trainer</div>
+<div class="product-price">230QR</div>
+</div>
+
+<div class="product-info">
+
+  <div class="product-description">Elevate your workout with the VibeFit White Air Trainer. 
+    Featuring advanced air cushioning for enhanced comfort and support, these trainers are perfect for high-performance activities. 
+    The breathable, lightweight design ensures all-day comfort, while the sleek white color adds a modern touch. 
+    Whether you're running, training, or just on the move, 
+    these trainers offer the perfect blend of style and functionality.</div>
+
+  <div class="product-rating">Rating:⭐⭐⭐☆☆</div>
+
+</div>
+</div>
+
+    </section>
+
+
+
+
+    <footer>
+      <div class="socails"> 
+          <a href="https://www.facebook.com/yourcompany" target="_blank"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+          <a href="https://twitter.com/yourcompany" target="_blank"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+          <a href="https://www.instagram.com/yourcompany" target="_blank"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+      </div>
+
+      <div>
+          <p>Copyright &copy;2024; Designed By Shayma</p>
+      </div>
+
+</footer>
+     
+</body>
+</html>
+
+

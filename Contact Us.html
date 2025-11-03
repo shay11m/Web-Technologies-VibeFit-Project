@@ -1,0 +1,389 @@
+<!-- Shayma Mariey- 60106301
+ INFS2101- 1 & 5
+ Fall 2024 Project
+ Mrs Claudia-->
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title> 
+ </head>
+
+ <style>
+        
+    body {
+      color:rgb(40, 63, 84);
+      background-color: rgb(209, 228, 233);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+    }
+    
+    /* Navbar Styling */
+    nav {
+      width:100%;
+      margin: 0 ;
+      padding: 0;
+    }
+    
+    .navbar ul{
+      width: 100%;
+      list-style-type: none;
+      background-color: rgb(255, 255, 255);
+      padding: 10px 10px ;
+      margin: 0 auto;
+      display: flex ;
+      justify-content: space-evenly;    
+      overflow: hidden;
+    
+    }
+    
+    
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      padding: 15px 20px;
+      font-family: sans-serif;
+      font-size: 18px;
+      position: relative;
+      transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    }
+      
+    
+      /* Hover Effects for Navbar Links */
+    .navbar a:hover {
+      color: rgb(169, 195, 225);
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    }
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: inline-block;
+        position: relative;
+      }
+    
+    
+      .navbar a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        border-color: rgb(169, 195, 225)  ; 
+        transition: width 0.3s;
+      }
+      
+      .navbar a:hover::after {
+        width: 100%; /* Expands the underline on hover */
+      }
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: inline-block;
+        transition: transform 0.3s;
+      }
+      
+      .navbar a:hover {
+        transform: scale(1.1); /* Slightly enlarges the link on hover */
+      }
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+      }
+      
+      .navbar a:hover {
+        border-color: rgb(169, 195, 225)  ; 
+      }
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: inline-block;
+        background: linear-gradient(120deg, transparent 0%, transparent 50%,rgb(169, 195, 225)  50%);
+        background-size: 220%;
+        transition: background-position 0.4s;
+      }
+      
+      .navbar a:hover {
+        background-position: 100%; /* Creates a smooth color fade effect */
+        color: white; /* Changes text color */
+      }
+
+
+    fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            
+        }
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+
+
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccccccf0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        #emailField{
+            width: 30%;
+        }
+
+        #phoneField{
+            width: 20%;
+        }
+
+        #name{
+          
+            width: 30%;
+        }
+
+        button[type="submit"],
+        button[type="reset"] {
+            padding: 12px 20px;
+            background-color: #333d44;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover,
+        button[type="reset"]:hover {
+            background-color: #6d93ab;
+        }
+
+  .socials {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 20px 0;
+    }
+    
+    .socials a {
+      display: flex;
+      padding: 6px ;
+      background-color: #b2a09767;
+      margin: 10px;
+      border-radius: 50%;
+    }
+
+    footer {
+  margin-top:90px;
+  width: 100%;
+  background-color: #b2a09767;
+  padding: 10px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+    footer img {
+      width: 30px; 
+      height: 30px; 
+      border-radius: 6px;
+      
+    }
+    .error-border {
+            border: 2px solid red;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+  
+     </style>
+
+
+ <body>
+  <nav class="navbar">
+    <ul> 
+      <img src="../images/logo.png" alt="VibeFit" style="width: 70px; height:50px; ">
+
+    <li> <a href="index.html">Home</a> </li>
+    <li> <a href="Products.html"> Products</a></li>
+    <li> <a href="Contact Us.html"> Contact Us </a> </li>
+    <li> <a href="Subscribe.html"> Subscribe</a> </li>
+    <li> <a href="FAQ.html"> FAQs </a> </li>
+
+    </ul>
+</nav>
+
+    <header> 
+    <h1>CONTACT US</h1>
+    </header>
+
+    <script>
+      function validateContactForm() {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var phone = document.getElementById("phone").value;
+          var message = document.getElementById("message").value;
+
+          var nameError = document.getElementById("nameError");
+          var emailError = document.getElementById("emailError");
+          var phoneError = document.getElementById("phoneError");
+          var messageError = document.getElementById("messageError");
+
+          // Clear previous error messages
+          nameError.textContent = "";
+          emailError.textContent = "";
+          phoneError.textContent = "";
+          messageError.textContent = "";
+
+          var isValid = true;
+
+          if (name.trim() === "") {
+              nameError.textContent = "Name cannot be empty.";
+              isValid = false;
+          }
+
+          if (document.getElementById("emailRadio").checked && email.trim() === "") {
+              emailError.textContent = "Email cannot be empty.";
+              isValid = false;
+          }
+
+          if (document.getElementById("phoneRadio").checked && phone.trim() === "") {
+              phoneError.textContent = "Phone number cannot be empty.";
+              isValid = false;
+          }
+
+          if (message.trim() === "") {
+              messageError.textContent = "Message cannot be empty.";
+              isValid = false;
+          }
+
+          return isValid;
+      }
+
+      function toggleContactField() {
+          var emailField = document.getElementById("emailField");
+          var phoneField = document.getElementById("phoneField");
+
+          if (document.getElementById("emailRadio").checked) {
+              emailField.style.display = "block";
+              phoneField.style.display = "none";
+          } else if (document.getElementById("phoneRadio").checked) {
+              emailField.style.display = "none";
+              phoneField.style.display = "block";
+          }
+      }
+
+      window.onload = toggleContactField;
+
+  </script>
+
+    <div class="container">
+      <section> 
+        <h1>Contact Information</h1>
+        <p><em>Head Office Address: </em>VibeFit HQ, 123 Fitness Avenue, Doha, Qatar</p>
+        <p><em>Hours of Operation: </em> Saturday-Thursday (8am-11pm)</p>
+        <p><em>Phone Number: </em>+974 55988766</p>
+        <p><em>Customer Service Email: </em> support@vibefit.com</p>
+      </section>
+    
+      <section>
+        <h2>Location</h2>
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.506585861308!2dYOUR_LONGITUDE!3dYOUR_LATITUDE!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3AYOUR_COMPANY_NAME!2sYOUR_COMPANY_NAME!5e0!3m2!1sen!2suk!4vYOUR_MAP_EMBED_API_KEY" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    <section>
+      <h2>Get In Touch</h2>
+      <form onsubmit="return validateContactForm()" action="https://sit.udst.edu.qa/processform.php" method="POST">
+          <fieldset><br>
+
+            <form onsubmit="return validateContactForm()">
+              <div>
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name">
+                  <span id="nameError" class="error-message"></span>
+              </div><br>
+          
+              <div>
+                  <label>Preferred Contact</label>
+
+                  <input type="radio" id="emailRadio" name="contactMethod" value="email" onclick="toggleContactField()" checked>
+                  <label for="emailRadio">Email</label>
+
+                  <input type="radio" id="phoneRadio" name="contactMethod" value="phone" onclick="toggleContactField()">
+                  <label for="phoneRadio">Phone</label>
+              </div><br>
+          
+              <div id="emailField">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                  <span id="emailError" class="error-message"></span>
+              </div>
+          
+              <div id="phoneField" style="display: none;">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone"  value="+974">
+                    <span id="phoneError" class="error-message"></span>
+                </div>
+
+              <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message"></textarea>
+                  <span id="messageError" class="error-message"></span>
+              </div><br>
+          
+              <div style="margin-top: 10px; padding: 5px; text-align: left;">
+                <button type="submit" style="margin-right: 10px;">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+          </form>
+          
+      </section>
+  </div>
+
+          </fieldset>
+          
+<footer>
+    <div class="socails"> 
+        <a href="https://www.facebook.com/yourcompany" target="_blank"><img src="../images/facebook-logo.png" alt="Facebook"></a>
+        <a href="https://twitter.com/yourcompany" target="_blank"><img src="../images/twitter-logo.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/yourcompany" target="_blank"><img src="../images/instagram-logo.png" alt="Instagram"></a>
+    </div>
+
+    <div style="color:black;">
+        <p>Copyright &copy;2024; Designed By Shayma</p>
+    </div>
+
+</footer>
+       
+ </body>
+ </html>
